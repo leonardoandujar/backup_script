@@ -16,15 +16,15 @@ then
 fi
 
 # [TASK 1]
-targetDirectory=
-destinationDirectory=
+targetDirectory=$1
+destinationDirectory=$2
 
 # [TASK 2]
-echo ""
-echo ""
+echo "The target directory is $targetDirectory"
+echo "The destination directory is $destinationDirectory"
 
 # [TASK 3]
-currentTS=``
+currentTS=`date`
 
 # [TASK 4]
 backupFileName=""
