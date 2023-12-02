@@ -48,16 +48,17 @@ cd $origAbsPath
 cd $destDirAbsPath
 
 # [TASK 8]
-yesterdayTS=`$(($currentTS - 24 * 60 * 60))`
+yesterdayTS=`(($currentTS - 24 * 60 * 60))`
 
 declare -a toBackup
 
-for file in $(ls) # [TASK 9]
+for file in $(ls -r) # [TASK 9]
 do
   # [TASK 10]
-  if ((`date -r file +%s > $yesterdayTS`))
+  if [[ `date -r $file +%s` > $yesterdayTS ]]
   then
-    toBackup += ($file)
+    # [TASK 11]
+    toBackup+=($file)
   fi
 done
 
